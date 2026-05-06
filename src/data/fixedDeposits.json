@@ -1,0 +1,47 @@
+[
+  {
+    "id": "FD-BOIGC-INR-2025-001",
+    "currency": "INR",
+    "principal": 50000000,
+    "rate": 7.25,
+    "tenure": "12 Months",
+    "tenureMonths": 12,
+    "startDate": "2025-09-15",
+    "maturityDate": "2026-09-15",
+    "maturityAmount": 53625000,
+    "status": "active",
+    "penaltyRate": 1.00,
+    "instructions": "credit_to_account",
+    "sourceAccountId": "BOIGC001"
+  },
+  {
+    "id": "FD-BOIGC-INR-2025-002",
+    "currency": "INR",
+    "principal": 25000000,
+    "rate": 7.00,
+    "tenure": "6 Months",
+    "tenureMonths": 6,
+    "startDate": "2025-12-01",
+    "maturityDate": "2026-06-01",
+    "maturityAmount": 25875000,
+    "status": "active",
+    "penaltyRate": 1.00,
+    "instructions": "credit_to_account",
+    "sourceAccountId": "BOIGC001"
+  },
+  {
+    "id": "FD-BOIGC-INR-2025-003",
+    "currency": "INR",
+    "principal": 10000000,
+    "rate": 7.50,
+    "tenure": "24 Months",
+    "tenureMonths": 24,
+    "startDate": "2025-05-01",
+    "maturityDate": "2027-05-01",
+    "maturityAmount": 11500000,
+    "status": "active",
+    "penaltyRate": 1.00,
+    "instructions": "auto_renew",
+    "sourceAccountId": "BOIGC001"
+  }
+]

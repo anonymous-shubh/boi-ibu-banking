@@ -1,0 +1,36 @@
+[
+  {
+    "id": "REQ-2026-001",
+    "type": "inward_remittance_disposal",
+    "submittedAt": "2026-05-05T10:30:00Z",
+    "status": "open",
+    "details": "Disposal instruction for inward remittance of USD 250,000 received from Acme Corp USA on 05 May 2026. SWIFT Ref: BKIDINGB20260505001. Requested disposal: Credit to INR Primary Account at spot rate.",
+    "referenceNo": "REQ-IRM-2026-001"
+  },
+  {
+    "id": "REQ-2026-002",
+    "type": "swift_confirmation",
+    "submittedAt": "2026-05-03T14:15:00Z",
+    "status": "in_progress",
+    "details": "SWIFT MT103 confirmation requested for outward remittance TXN-2026-012 dated 03 May 2026. Beneficiary: Shanghai Trading Co. Amount: USD 75,000.",
+    "referenceNo": "REQ-SWF-2026-002",
+    "updatedAt": "2026-05-04T09:00:00Z"
+  },
+  {
+    "id": "REQ-2026-003",
+    "type": "certified_statement",
+    "submittedAt": "2026-04-28T11:00:00Z",
+    "status": "completed",
+    "details": "Certified bank statement for INR Primary Account (BOIGC001) for the period 01 Apr 2026 to 30 Apr 2026 for audit purposes.",
+    "referenceNo": "REQ-CST-2026-003",
+    "updatedAt": "2026-04-30T15:00:00Z"
+  },
+  {
+    "id": "REQ-2026-004",
+    "type": "stop_payment",
+    "submittedAt": "2026-04-23T16:45:00Z",
+    "status": "open",
+    "details": "Stop payment request for scheduled transfer to Tokyo Partners Ltd — SCH-TOKYO-001. Reason: Commercial dispute. Amount: INR 32,00,000.",
+    "referenceNo": "REQ-STP-2026-004"
+  }
+]

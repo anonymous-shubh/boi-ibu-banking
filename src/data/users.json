@@ -1,0 +1,26 @@
+[
+  {
+    "id": "BOIGC-ADMIN-001",
+    "name": "Rajesh Kumar",
+    "role": "Admin",
+    "email": "rajesh.kumar@boigiftcity.in",
+    "mobile": "+91 98765 43210",
+    "permissions": ["initiate", "approve", "manage_users", "view_all"]
+  },
+  {
+    "id": "BOIGC-MAKER-001",
+    "name": "Priya Sharma",
+    "role": "Maker",
+    "email": "priya.sharma@boigiftcity.in",
+    "mobile": "+91 99876 54321",
+    "permissions": ["initiate", "view_own"]
+  },
+  {
+    "id": "BOIGC-CHECKER-001",
+    "name": "Anil Verma",
+    "role": "Checker",
+    "email": "anil.verma@boigiftcity.in",
+    "mobile": "+91 97654 32109",
+    "permissions": ["approve", "reject", "view_pending"]
+  }
+]

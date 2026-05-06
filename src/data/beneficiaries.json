@@ -1,0 +1,83 @@
+[
+  {
+    "id": "BEN-001",
+    "name": "Acme Corporation USA",
+    "accountNo": "8765432100987",
+    "bankName": "JP Morgan Chase Bank",
+    "currency": "USD",
+    "country": "United States",
+    "type": "international",
+    "status": "approved",
+    "swift": "CHASUS33XXX",
+    "iban": "",
+    "relationship": "Trade Partner",
+    "addedAt": "2026-01-15"
+  },
+  {
+    "id": "BEN-002",
+    "name": "Euro Imports B.V.",
+    "accountNo": "NL91ABNA0417164300",
+    "bankName": "Deutsche Bank AG",
+    "currency": "EUR",
+    "country": "Netherlands",
+    "type": "international",
+    "status": "approved",
+    "swift": "DEUTDEFFXXX",
+    "iban": "NL91ABNA0417164300",
+    "relationship": "Supplier",
+    "addedAt": "2026-02-01"
+  },
+  {
+    "id": "BEN-003",
+    "name": "Tata Consultancy Services Ltd",
+    "accountNo": "1234567890123456",
+    "bankName": "State Bank of India",
+    "currency": "INR",
+    "country": "India",
+    "type": "domestic",
+    "status": "approved",
+    "ifsc": "SBIN0001234",
+    "relationship": "Vendor",
+    "addedAt": "2026-01-20"
+  },
+  {
+    "id": "BEN-004",
+    "name": "Singapore Trading Pte Ltd",
+    "accountNo": "072-12345-6",
+    "bankName": "DBS Bank Singapore",
+    "currency": "USD",
+    "country": "Singapore",
+    "type": "international",
+    "status": "pending",
+    "swift": "DBSSSGSGXXX",
+    "relationship": "Trade Partner",
+    "addedAt": "2026-05-04"
+  },
+  {
+    "id": "BEN-005",
+    "name": "London Trading Co Ltd",
+    "accountNo": "GB29NWBK60161331926819",
+    "bankName": "Barclays Bank PLC",
+    "currency": "GBP",
+    "country": "United Kingdom",
+    "type": "international",
+    "status": "pending",
+    "swift": "BARCGB22XXX",
+    "iban": "GB29NWBK60161331926819",
+    "relationship": "Client",
+    "addedAt": "2026-05-05"
+  },
+  {
+    "id": "BEN-006",
+    "name": "Tokyo Partners Ltd",
+    "accountNo": "1234567",
+    "bankName": "Mitsubishi UFJ Bank",
+    "currency": "USD",
+    "country": "Japan",
+    "type": "international",
+    "status": "rejected",
+    "swift": "BOTKJPJTXXX",
+    "rejectionReason": "SWIFT code format mismatch — please verify with beneficiary bank",
+    "addedAt": "2026-04-28"
+  }
+]

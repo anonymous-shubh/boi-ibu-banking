@@ -1,0 +1,27 @@
+{
+  "domestic_transfer": {
+    "bankProcessingCharge": 500,
+    "gstRate": 0.18,
+    "swiftCharge": 0,
+    "correspondentCharge": 0,
+    "foreignBankCharge": 0,
+    "label": "NEFT / RTGS Processing"
+  },
+  "international_transfer": {
+    "bankProcessingCharge": 1500,
+    "gstRate": 0.18,
+    "swiftCharge": 750,
+    "correspondentCharge": 2500,
+    "foreignBankCharge": 2000,
+    "label": "SWIFT / Foreign Remittance"
+  },
+  "fx_conversion": {
+    "bankProcessingCharge": 1000,
+    "gstRate": 0.18,
+    "swiftCharge": 0,
+    "correspondentCharge": 0,
+    "foreignBankCharge": 0,
+    "spreadIncluded": true,
+    "label": "FX Conversion"
+  }
+}

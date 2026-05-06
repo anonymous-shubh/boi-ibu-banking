@@ -1,0 +1,10 @@
+[
+  { "pair": "USD/INR", "base": "USD", "quote": "INR", "bid": 83.42, "ask": 83.57, "spread": 0.15, "spreadPct": 0.18, "change24h": 0.12, "lastUpdated": "2026-05-06T11:05:00Z", "indicative": true },
+  { "pair": "EUR/INR", "base": "EUR", "quote": "INR", "bid": 89.15, "ask": 89.35, "spread": 0.20, "spreadPct": 0.22, "change24h": -0.08, "lastUpdated": "2026-05-06T11:05:00Z", "indicative": true },
+  { "pair": "GBP/INR", "base": "GBP", "quote": "INR", "bid": 104.80, "ask": 105.05, "spread": 0.25, "spreadPct": 0.24, "change24h": 0.31, "lastUpdated": "2026-05-06T11:05:00Z", "indicative": true },
+  { "pair": "USD/EUR", "base": "USD", "quote": "EUR", "bid": 0.9312, "ask": 0.9328, "spread": 0.0016, "spreadPct": 0.17, "change24h": -0.05, "lastUpdated": "2026-05-06T11:05:00Z", "indicative": true },
+  { "pair": "USD/GBP", "base": "USD", "quote": "GBP", "bid": 0.7921, "ask": 0.7935, "spread": 0.0014, "spreadPct": 0.18, "change24h": 0.09, "lastUpdated": "2026-05-06T11:05:00Z", "indicative": true },
+  { "pair": "EUR/GBP", "base": "EUR", "quote": "GBP", "bid": 0.8502, "ask": 0.8518, "spread": 0.0016, "spreadPct": 0.19, "change24h": 0.02, "lastUpdated": "2026-05-06T11:05:00Z", "indicative": true },
+  { "pair": "AED/INR", "base": "AED", "quote": "INR", "bid": 22.70, "ask": 22.82, "spread": 0.12, "spreadPct": 0.53, "change24h": 0.04, "lastUpdated": "2026-05-06T11:05:00Z", "indicative": true },
+  { "pair": "JPY/INR", "base": "JPY", "quote": "INR", "bid": 0.5521, "ask": 0.5545, "spread": 0.0024, "spreadPct": 0.43, "change24h": -0.11, "lastUpdated": "2026-05-06T11:05:00Z", "indicative": true }
+]

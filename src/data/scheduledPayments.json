@@ -1,0 +1,37 @@
+[
+  {
+    "id": "SCH-001",
+    "beneficiaryName": "Payroll Account — HDFC Bank",
+    "amount": 4800000,
+    "currency": "INR",
+    "frequency": "weekly",
+    "nextDate": "2026-05-13",
+    "endDate": "2026-12-31",
+    "status": "active",
+    "sourceAccountId": "BOIGC001",
+    "purposeCode": "S0099"
+  },
+  {
+    "id": "SCH-002",
+    "beneficiaryName": "Euro Imports B.V.",
+    "amount": 45000,
+    "currency": "EUR",
+    "frequency": "monthly",
+    "nextDate": "2026-06-01",
+    "endDate": "2026-12-01",
+    "status": "active",
+    "sourceAccountId": "BOIGC003",
+    "purposeCode": "P0102"
+  },
+  {
+    "id": "SCH-003",
+    "beneficiaryName": "UK Compliance Agents Ltd",
+    "amount": 15000,
+    "currency": "GBP",
+    "frequency": "once",
+    "nextDate": "2026-06-15",
+    "status": "active",
+    "sourceAccountId": "BOIGC004",
+    "purposeCode": "P0802"
+  }
+]

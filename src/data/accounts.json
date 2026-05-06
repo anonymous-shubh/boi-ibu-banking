@@ -1,0 +1,46 @@
+[
+  {
+    "id": "BOIGC001",
+    "name": "BOI GIFT City — INR Primary Account",
+    "type": "Current",
+    "currency": "INR",
+    "balance": 185000000.00,
+    "available": 184200000.00,
+    "primary": true,
+    "accountNo": "90210GIFCITY001",
+    "ifsc": "BKID0GFTCIT"
+  },
+  {
+    "id": "BOIGC002",
+    "name": "BOI GIFT City — USD Trade Account",
+    "type": "Current",
+    "currency": "USD",
+    "balance": 4250000.00,
+    "available": 4180000.00,
+    "accountNo": "90210GIFCITY002",
+    "swift": "BKIDINGBGFT",
+    "iban": "GB29BOIG12345602001234"
+  },
+  {
+    "id": "BOIGC003",
+    "name": "BOI GIFT City — EUR Trade Account",
+    "type": "Current",
+    "currency": "EUR",
+    "balance": 1820500.00,
+    "available": 1800000.00,
+    "accountNo": "90210GIFCITY003",
+    "swift": "BKIDINGBGFT",
+    "iban": "DE89370400440532013000"
+  },
+  {
+    "id": "BOIGC004",
+    "name": "BOI GIFT City — GBP Trade Account",
+    "type": "Current",
+    "currency": "GBP",
+    "balance": 950000.00,
+    "available": 940000.00,
+    "accountNo": "90210GIFCITY004",
+    "swift": "BKIDINGBGFT",
+    "iban": "GB29NWBK60161331926819"
+  }
+]

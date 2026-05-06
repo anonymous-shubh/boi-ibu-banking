@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    min-width: 1280px;
+    font-size: 16px;
+  }
+
+  body {
+    @apply bg-surface-50 text-foreground font-sans antialiased;
+    min-width: 1280px;
+    margin: 0;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #F0F2F7; }
+  ::-webkit-scrollbar-thumb { background: #CBD1DF; border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #6099D9; }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  }
+}
+
+@layer components {
+  .amount       { @apply font-mono font-medium tabular-nums; }
+  .amount-credit { @apply amount text-success-700; }
+  .amount-debit  { @apply amount text-error-700; }
+
+  .badge         { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium; }
+  .badge-success { @apply badge bg-success-100 text-success-700; }
+  .badge-warning { @apply badge bg-warning-100 text-warning-700; }
+  .badge-error   { @apply badge bg-error-100 text-error-700; }
+  .badge-info    { @apply badge bg-info-100 text-info-700; }
+  .badge-muted   { @apply badge bg-surface-100 text-muted-foreground; }
+
+  .card-base   { @apply bg-white rounded-lg shadow-card border border-border; }
+
+  .nav-item    { @apply flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-primary-200 hover:bg-primary-800 hover:text-white transition-colors duration-150 cursor-pointer; }
+  .nav-item-active { @apply bg-primary-800 text-white; }
+
+  .page-title    { @apply text-2xl font-bold text-foreground; }
+  .page-subtitle { @apply mt-0.5 text-sm text-muted-foreground; }
+  .section-label { @apply text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2; }
+
+  .compliance-bar         { @apply flex items-start gap-3 p-3 rounded-md border text-sm; }
+  .compliance-bar-warning { @apply compliance-bar bg-warning-50 border-warning-200 text-warning-700; }
+  .compliance-bar-info    { @apply compliance-bar bg-info-50 border-info-200 text-info-700; }
+}
+
+@layer utilities {
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  /* Hide scrollbar while preserving scroll functionality */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}

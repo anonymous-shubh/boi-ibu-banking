@@ -1,0 +1,69 @@
+[
+  {
+    "id": "APPR-2026-001",
+    "type": "fund_transfer",
+    "makerName": "Priya Sharma",
+    "makerId": "BOIGC-MAKER-001",
+    "amount": 62500000,
+    "currency": "INR",
+    "beneficiary": "Acme Corporation USA",
+    "beneficiaryBank": "JP Morgan Chase, New York",
+    "purpose": "Trade Payment — Invoice #INV-2026-0456",
+    "submittedAt": "2026-05-06T09:15:00Z",
+    "status": "pending",
+    "urgency": "high"
+  },
+  {
+    "id": "APPR-2026-002",
+    "type": "fund_transfer",
+    "makerName": "Priya Sharma",
+    "makerId": "BOIGC-MAKER-001",
+    "amount": 18500000,
+    "currency": "INR",
+    "beneficiary": "Euro Imports B.V.",
+    "beneficiaryBank": "Deutsche Bank, Frankfurt",
+    "purpose": "Supplier Advance — Q2 2026",
+    "submittedAt": "2026-05-05T16:42:00Z",
+    "status": "pending",
+    "urgency": "normal"
+  },
+  {
+    "id": "APPR-2026-003",
+    "type": "fund_transfer",
+    "makerName": "Priya Sharma",
+    "makerId": "BOIGC-MAKER-001",
+    "amount": 4800000,
+    "currency": "INR",
+    "beneficiary": "Tata Consultancy Services Ltd",
+    "beneficiaryBank": "State Bank of India",
+    "purpose": "IT Services — April 2026",
+    "submittedAt": "2026-05-05T11:30:00Z",
+    "status": "pending",
+    "urgency": "normal"
+  },
+  {
+    "id": "APPR-2026-004",
+    "type": "beneficiary_add",
+    "makerName": "Priya Sharma",
+    "makerId": "BOIGC-MAKER-001",
+    "beneficiary": "Singapore Trading Pte Ltd",
+    "beneficiaryBank": "DBS Bank Singapore",
+    "currency": "USD",
+    "purpose": "New beneficiary whitelist request",
+    "submittedAt": "2026-05-04T14:20:00Z",
+    "status": "pending",
+    "urgency": "normal"
+  },
+  {
+    "id": "APPR-2026-005",
+    "type": "fd_creation",
+    "makerName": "Priya Sharma",
+    "makerId": "BOIGC-MAKER-001",
+    "amount": 20000000,
+    "currency": "INR",
+    "purpose": "FD Creation — 12 Months @ 7.25% p.a.",
+    "submittedAt": "2026-05-03T10:00:00Z",
+    "status": "pending",
+    "urgency": "normal"
+  }
+]
