@@ -40,7 +40,7 @@ export function Login() {
       <div className="mb-6">
         <h2 className="text-xl font-bold text-foreground">Secure Sign In</h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Access your BOI GIFT City IBU account
+          Access your Arttha account
         </p>
       </div>
 

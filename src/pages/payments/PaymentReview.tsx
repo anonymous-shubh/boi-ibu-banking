@@ -56,6 +56,7 @@ export function PaymentReview() {
   const draft          = paymentDraft
   const sourceAccount  = getAccount(draft.sourceAccountId)
   const beneficiary    = beneficiaries.find(b => b.id === draft.beneficiaryId)
+  const destAccount    = draft.transferType === 'own' ? getAccount(draft.beneficiaryId) : undefined
   const charges        = draft.charges
   const isInternational = draft.transferType === 'international'
 
@@ -76,10 +77,10 @@ export function PaymentReview() {
       state: {
         amount: draft.amount,
         netAmount: charges?.netAmount ?? draft.amount,
-        beneficiary: beneficiary?.name,
-        currency: beneficiary?.currency,
+        beneficiary: beneficiary?.name ?? destAccount?.name,
+        currency: beneficiary?.currency ?? destAccount?.currency ?? 'INR',
         foreignAmount,
-        reference: `TXN-BOIGC-${new Date().getFullYear()}${String(Date.now()).slice(-8)}`,
+        reference: `TXN-ARTTHA-${new Date().getFullYear()}${String(Date.now()).slice(-8)}`,
         uetr: 'b4c8d2e6-f1a3-7890-abcd-ef5678901234',
         valueDate: charges?.valueDate,
       },
@@ -88,7 +89,7 @@ export function PaymentReview() {
 
   function handleSubmitForApproval() {
     toast.success(
-      `Payment submitted for Checker approval. Ref: TXN-BOIGC-${new Date().getFullYear()}${String(Date.now()).slice(-5)}`,
+      `Payment submitted for Checker approval. Ref: TXN-ARTTHA-${new Date().getFullYear()}${String(Date.now()).slice(-5)}`,
     )
     clearPaymentDraft()
     navigate('/dashboard')
@@ -134,15 +135,25 @@ export function PaymentReview() {
                   <p className="text-sm font-semibold text-foreground">{sourceAccount?.name ?? draft.sourceAccountId}</p>
                   <p className="text-xs font-mono text-muted-foreground">{sourceAccount?.accountNo ?? draft.sourceAccountId}</p>
                   <p className="text-xs text-muted-foreground mt-0.5">
-                    {getCurrencyFlag('INR')} INR — Available: {formatINR(sourceAccount?.available ?? 0, true)}
+                    {getCurrencyFlag('INR')} INR — Available: {formatINR(sourceAccount?.available ?? 0)}
                   </p>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground mb-1">To</p>
-                  <p className="text-sm font-semibold text-foreground">{beneficiary?.name ?? draft.beneficiaryId}</p>
-                  <p className="text-xs font-mono text-muted-foreground">{beneficiary?.swift ?? beneficiary?.accountNo}</p>
+                  <p className="text-sm font-semibold text-foreground">
+                    {draft.transferType === 'own'
+                      ? (destAccount?.name ?? draft.beneficiaryId)
+                      : (beneficiary?.name ?? draft.beneficiaryId)}
+                  </p>
+                  <p className="text-xs font-mono text-muted-foreground">
+                    {draft.transferType === 'own'
+                      ? (destAccount?.accountNo ?? '')
+                      : (beneficiary?.swift ?? beneficiary?.accountNo ?? '')}
+                  </p>
                   <p className="text-xs text-muted-foreground mt-0.5">
-                    {beneficiary ? `${getCurrencyFlag(beneficiary.currency)} ${beneficiary.currency} — ${beneficiary.bankName}` : ''}
+                    {draft.transferType === 'own'
+                      ? (destAccount ? `${getCurrencyFlag(destAccount.currency)} ${destAccount.currency} — Own Account Transfer` : '')
+                      : (beneficiary ? `${getCurrencyFlag(beneficiary.currency)} ${beneficiary.currency} — ${beneficiary.bankName}` : '')}
                   </p>
                 </div>
               </div>
@@ -289,7 +300,7 @@ export function PaymentReview() {
       <OTPAuthModal
         isOpen={otpOpen}
         title="Authorize Transfer"
-        description={`Verify your identity to authorize transfer of ${formatINR(draft.amount)} to ${beneficiary?.name}.`}
+        description={`Verify your identity to authorize transfer of ${formatINR(draft.amount)} to ${beneficiary?.name ?? destAccount?.name ?? 'destination account'}.`}
         onVerify={handleOTPVerify}
         onClose={() => setOtpOpen(false)}
       />

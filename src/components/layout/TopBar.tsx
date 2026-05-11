@@ -39,7 +39,7 @@ export function TopBar() {
       <header className="h-16 bg-primary-900 border-b border-primary-700 flex items-center justify-between px-6 flex-shrink-0 z-20">
         {/* Breadcrumb area */}
         <nav className="flex items-center gap-1 text-sm text-primary-300">
-          <span>BOI GIFT City IBU</span>
+          <span>Arttha</span>
           <ChevronRight size={14} />
           <span className="text-primary-100 font-medium">Internet Banking</span>
         </nav>

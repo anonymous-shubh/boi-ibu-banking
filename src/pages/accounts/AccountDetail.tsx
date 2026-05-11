@@ -163,8 +163,8 @@ export function AccountDetail() {
           {[
             { label: 'Available Balance', value: formatCurrency(account.available, ccy) },
             { label: 'Book Balance',      value: formatCurrency(account.balance, ccy) },
-            { label: 'Total Credits',     value: formatCurrency(credits, ccy, true) },
-            { label: 'Total Debits',      value: formatCurrency(debits, ccy, true) },
+            { label: 'Total Credits',     value: formatCurrency(credits, ccy) },
+            { label: 'Total Debits',      value: formatCurrency(debits, ccy) },
           ].map(({ label, value }) => (
             <div key={label}>
               <p className="text-xs text-blue-200/60">{label}</p>
@@ -188,7 +188,7 @@ export function AccountDetail() {
           </div>
           <div>
             <p className="text-xs text-muted-foreground">Total Credits</p>
-            <p className="text-sm font-bold text-success-600 font-mono">{formatCurrency(credits, ccy, true)}</p>
+            <p className="text-sm font-bold text-success-600 font-mono">{formatCurrency(credits, ccy)}</p>
           </div>
         </div>
         <div className="card-base p-4 flex items-center gap-3">
@@ -197,7 +197,7 @@ export function AccountDetail() {
           </div>
           <div>
             <p className="text-xs text-muted-foreground">Total Debits</p>
-            <p className="text-sm font-bold text-error-600 font-mono">{formatCurrency(debits, ccy, true)}</p>
+            <p className="text-sm font-bold text-error-600 font-mono">{formatCurrency(debits, ccy)}</p>
           </div>
         </div>
         <div className="card-base p-4 flex items-center gap-3">
@@ -311,7 +311,7 @@ export function AccountDetail() {
                       {txn.credit ? formatCurrency(txn.credit, ccy) : '—'}
                     </td>
                     <td className="px-4 py-3 text-right text-xs font-mono font-semibold text-foreground">
-                      {txn.balance ? formatCurrency(txn.balance, ccy, true) : '—'}
+                      {txn.balance ? formatCurrency(txn.balance, ccy) : '—'}
                     </td>
                     <td className="px-4 py-3 text-right"><StatusBadge status={txn.status} /></td>
                     <td className="px-4 py-3 text-right">

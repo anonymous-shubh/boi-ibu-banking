@@ -14,7 +14,7 @@ const ELIGIBILITY_CRITERIA = [
 ]
 
 const CONSENT_ITEMS = [
-  { id: 'terms', label: 'I have read and agree to the Terms & Conditions of BOI GIFT City IBU Internet Banking' },
+  { id: 'terms', label: 'I have read and agree to the Terms & Conditions of Arttha Internet Banking' },
   { id: 'data',  label: 'I consent to the collection and processing of my data as per the Privacy Policy and IFSCA guidelines' },
   { id: 'comms', label: 'I agree to receive transaction alerts, OTPs, and important account communications via SMS and email' },
 ]
@@ -63,7 +63,7 @@ export function Consent() {
           <p className="text-sm font-semibold text-warning-800">IBU Eligibility Notice</p>
         </div>
         <p className="text-xs text-warning-700 mb-2">
-          Access to BOI GIFT City IBU Internet Banking is restricted to eligible entities as defined under IFSCA regulations:
+          Access to Arttha Internet Banking is restricted to eligible entities as defined under IFSCA regulations:
         </p>
         <ul className="space-y-1.5">
           {ELIGIBILITY_CRITERIA.map((c, i) => (

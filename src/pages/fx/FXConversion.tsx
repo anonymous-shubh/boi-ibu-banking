@@ -174,7 +174,7 @@ export function FXConversion() {
     await new Promise(r => setTimeout(r, 1500))
     const [foreignCurrency] = pair.split('/')
     setDeal({
-      reference:       `FX-BOIGC-${new Date().getFullYear()}${String(Date.now()).slice(-6)}`,
+      reference:       `FX-ARTTHA-${new Date().getFullYear()}${String(Date.now()).slice(-6)}`,
       pair,
       sendAmount:      numAmount,
       receiveAmount,
@@ -240,7 +240,7 @@ export function FXConversion() {
               <div>
                 <label className="block text-xs font-medium text-foreground mb-1.5">Source Account</label>
                 <div className="px-3 py-2.5 text-sm border border-border rounded-md bg-surface-100 text-muted-foreground">
-                  🇮🇳 {inrAccount?.name ?? 'INR Primary'} — {formatINR(inrAccount?.available ?? 0, true)}
+                  🇮🇳 {inrAccount?.name ?? 'INR Primary'} — {formatINR(inrAccount?.available ?? 0)}
                 </div>
               </div>
             </div>
@@ -248,7 +248,7 @@ export function FXConversion() {
             {/* Amount */}
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium text-foreground mb-1.5">You Send (INR)</label>
+                <label className="block text-xs font-medium text-foreground mb-1.5">You Send</label>
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-sm">₹</span>
                   <input
@@ -266,7 +266,7 @@ export function FXConversion() {
               </div>
               <div>
                 <label className="block text-xs font-medium text-foreground mb-1.5">
-                  You Receive (est.) — {pair.split('/')[0]}
+                  You Receive (est.)
                 </label>
                 <div className="px-3 py-2.5 text-sm border border-border rounded-md bg-surface-50 font-mono font-semibold text-success-700">
                   {receiveAmount > 0

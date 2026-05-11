@@ -93,11 +93,11 @@ const ALERT_TYPES: AlertType[] = [
 ]
 
 const NOTIFICATION_LOG = [
-  { id: 'N1', label: 'Debit Alert',          message: 'Rs. 62,50,000 debited — TXN-BOIGC-20240506-00891', time: '2026-05-06 09:31 IST', channel: 'sms'   },
+  { id: 'N1', label: 'Debit Alert',          message: 'Rs. 62,50,000 debited — TXN-ARTTHA-20240506-00891', time: '2026-05-06 09:31 IST', channel: 'sms'   },
   { id: 'N2', label: 'Login Notification',   message: 'New login from MacBook Pro (Chrome 124) — 192.168.1.45', time: '2026-05-06 09:14 IST', channel: 'email' },
   { id: 'N3', label: 'Approval Pending',     message: 'Payment Rs. 45,00,000 to Acme Corp awaiting your approval', time: '2026-05-05 16:32 IST', channel: 'sms'   },
   { id: 'N4', label: 'Credit Alert',         message: 'USD 1,25,000 credited — Inward SWIFT TT202505050023', time: '2026-05-05 12:08 IST', channel: 'email' },
-  { id: 'N5', label: 'High Value Alert',     message: 'Transaction above Rs. 1 Cr: Rs. 5,00,00,000 — FD-BOIGC-INR-001', time: '2026-05-04 11:22 IST', channel: 'sms'   },
+  { id: 'N5', label: 'High Value Alert',     message: 'Transaction above Rs. 1 Cr: Rs. 5,00,00,000 — FD-ARTTHA-INR-001', time: '2026-05-04 11:22 IST', channel: 'sms'   },
 ]
 
 const INITIAL_RULES: NotificationRule[] = [

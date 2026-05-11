@@ -73,7 +73,7 @@ function FDCard({
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <p className="text-sm font-bold text-foreground">{formatINR(fd.principal, true)}</p>
+              <p className="text-sm font-bold text-foreground">{formatINR(fd.principal)}</p>
               <span className={cn(
                 'text-xs rounded-full px-2.5 py-0.5 font-medium',
                 fd.status === 'active'              && 'bg-success-50 text-success-700',
@@ -99,7 +99,7 @@ function FDCard({
           )}
           <div className="text-right">
             <p className="text-xs text-muted-foreground">Maturity Amount</p>
-            <p className="text-sm font-bold font-mono text-success-700">{formatINR(fd.maturityAmount, true)}</p>
+            <p className="text-sm font-bold font-mono text-success-700">{formatINR(fd.maturityAmount)}</p>
           </div>
           {isExpanded ? <ChevronUp size={16} className="text-muted-foreground" /> : <ChevronDown size={16} className="text-muted-foreground" />}
         </div>
@@ -136,7 +136,7 @@ function FDCard({
                   { label: 'Interest Rate',  value: `${fd.rate}% p.a.` },
                   { label: 'Tenure',         value: fd.tenure },
                   { label: 'Currency',       value: '🇮🇳 INR (Fixed)' },
-                  { label: 'Accrued Interest', value: formatINR(calcAccruedInterest(fd.principal, fd.rate, fd.startDate), true) },
+                  { label: 'Accrued Interest', value: formatINR(calcAccruedInterest(fd.principal, fd.rate, fd.startDate)) },
                   { label: 'Instructions',   value: fd.instructions === 'auto_renew' ? 'Auto-Renew' : 'Credit to Account' },
                 ].map(({ label, value }) => (
                   <div key={label}>
@@ -421,7 +421,7 @@ function CreateFDDrawer({ onClose, onAdd }: { onClose: () => void; onAdd: (fd: F
           {maturityAmt > 0 && (
             <div className="p-3 bg-accent-light border border-accent-gold/30 rounded-md flex items-center justify-between">
               <span className="text-xs font-semibold text-foreground">Maturity Amount</span>
-              <span className="text-sm font-bold font-mono text-accent-gold">{formatINR(maturityAmt, true)}</span>
+              <span className="text-sm font-bold font-mono text-accent-gold">{formatINR(maturityAmt)}</span>
             </div>
           )}
 
@@ -485,11 +485,11 @@ function CreateFDDrawer({ onClose, onAdd }: { onClose: () => void; onAdd: (fd: F
       <OTPAuthModal
         isOpen={otpOpen}
         title="Authorize FD Creation"
-        description={`Enter OTP to create FD of ${formatINR(numPrincipal, true)} for ${tenure} @ ${rate}% p.a.`}
+        description={`Enter OTP to create FD of ${formatINR(numPrincipal)} for ${tenure} @ ${rate}% p.a.`}
         onVerify={async () => {
           await new Promise(r => setTimeout(r, 1200))
           const newFD: FDType = {
-            id:           `FD-BOIGC-INR-${new Date().getFullYear()}-${Date.now().toString().slice(-4)}`,
+            id:           `FD-ARTTHA-INR-${new Date().getFullYear()}-${Date.now().toString().slice(-4)}`,
             currency:     'INR',
             principal:    numPrincipal,
             rate,
@@ -556,7 +556,7 @@ export function FixedDeposit() {
       <div className="flex items-start gap-2 p-3 rounded-md bg-info-50 border border-info-200 text-xs text-info-700">
         <AlertTriangle size={13} className="flex-shrink-0 mt-0.5" />
         <span>
-          Fixed Deposits at BOI GIFT City IBU are <strong>INR-denominated only</strong>, as mandated by IFSCA regulations.
+          Fixed Deposits at Arttha are <strong>INR-denominated only</strong>, as mandated by IFSCA regulations.
           Foreign currency term deposits are not permitted at the IBU level.
         </span>
       </div>
@@ -565,9 +565,9 @@ export function FixedDeposit() {
       <div className="grid grid-cols-4 gap-4">
         {[
           { label: 'Active FDs',        value: fds.filter(fd => fd.status === 'active').length.toString() },
-          { label: 'Total Principal',   value: formatINR(totalPrincipal, true) },
-          { label: 'Total at Maturity', value: formatINR(totalMaturity, true) },
-          { label: 'Total Interest',    value: formatINR(totalMaturity - totalPrincipal, true) },
+          { label: 'Total Principal',   value: formatINR(totalPrincipal) },
+          { label: 'Total at Maturity', value: formatINR(totalMaturity) },
+          { label: 'Total Interest',    value: formatINR(totalMaturity - totalPrincipal) },
         ].map(({ label, value }) => (
           <div key={label} className="card-base px-4 py-3">
             <p className="text-xs text-muted-foreground">{label}</p>

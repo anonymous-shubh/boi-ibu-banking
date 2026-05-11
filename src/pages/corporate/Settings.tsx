@@ -144,7 +144,7 @@ function DeregisterModal({ onClose }: { onClose: () => void }) {
               <>
                 <p className="text-sm text-foreground">
                   Are you absolutely sure you want to de-register{' '}
-                  <strong>Rajesh Kumar (BOIGC-ADMIN-001)</strong> from BOI GIFT City IBU Internet Banking?
+                  <strong>Rajesh Kumar (BOIGC-ADMIN-001)</strong> from Arttha Internet Banking?
                 </p>
 
                 <label className="flex items-start gap-2 cursor-pointer">

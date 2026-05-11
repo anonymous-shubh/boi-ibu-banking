@@ -85,8 +85,8 @@ export function Sidebar() {
         </div>
         {!collapsed && (
           <div className="overflow-hidden">
-            <p className="text-sm font-bold text-white leading-tight truncate">BOI GIFT City</p>
-            <p className="text-2xs text-primary-300 font-medium truncate">IBU Internet Banking</p>
+            <p className="text-sm font-bold text-white leading-tight truncate">Arttha</p>
+            <p className="text-2xs text-primary-300 font-medium truncate">Internet Banking</p>
           </div>
         )}
       </div>

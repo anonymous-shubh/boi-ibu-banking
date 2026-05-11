@@ -69,5 +69,5 @@ export function truncateRef(ref: string, len = 16): string {
 
 /** Generate a mock transaction reference */
 export function genTxnRef(): string {
-  return `TXN-BOIGC-${new Date().getFullYear()}${String(Date.now()).slice(-8)}`
+  return `TXN-ARTTHA-${new Date().getFullYear()}${String(Date.now()).slice(-8)}`
 }

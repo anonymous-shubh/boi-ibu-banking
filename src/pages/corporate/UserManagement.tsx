@@ -268,7 +268,7 @@ export function UserManagement() {
         </div>
         {isAdmin && (
           <button
-            onClick={() => toast.info('Add User — contact BOI branch for new user onboarding (demo)')}
+            onClick={() => toast.info('Add User — contact Arttha branch for new user onboarding (demo)')}
             className="flex items-center gap-2 bg-primary-900 text-white rounded-md px-4 py-2 text-sm font-semibold hover:bg-primary-700 transition-colors"
           >
             <Plus size={16} /> Add User

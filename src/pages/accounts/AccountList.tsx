@@ -69,10 +69,10 @@ function AccountCard({ account, index }: { account: Account; index: number }) {
             'text-3xl font-bold font-mono tracking-tight',
             isPrimary ? 'text-white' : 'text-foreground',
           )}>
-            {formatCurrency(account.available, account.currency, true)}
+            {formatCurrency(account.available, account.currency)}
           </p>
           <p className={cn('text-xs', isPrimary ? 'text-blue-200/60' : 'text-muted-foreground')}>
-            Book balance: {formatCurrency(account.balance, account.currency, true)}
+            Book balance: {formatCurrency(account.balance, account.currency)}
           </p>
         </div>
 
@@ -163,7 +163,7 @@ export function AccountList() {
       <div className="grid grid-cols-4 gap-4">
         {[
           { label: 'Total Accounts', value: accounts.length.toString(), sub: 'Multi-currency portfolio' },
-          { label: 'INR Available', value: formatCurrency(accounts.find(a => a.primary)?.available ?? 0, 'INR', true), sub: 'Primary account' },
+          { label: 'INR Available', value: formatCurrency(accounts.find(a => a.primary)?.available ?? 0, 'INR'), sub: 'Primary account' },
           { label: 'Currencies', value: [...new Set(accounts.map(a => a.currency))].join(' · '), sub: 'Active denominations' },
           { label: 'Account Status', value: 'All Active', sub: 'No dormant accounts' },
         ].map(({ label, value, sub }) => (

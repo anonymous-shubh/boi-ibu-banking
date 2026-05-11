@@ -77,7 +77,7 @@ export function PaymentNew() {
     const errs: Record<string, string> = {}
     if (!amount || numAmount <= 0) errs.amount = 'Please enter a valid amount.'
     if (numAmount > (sourceAccount?.available ?? 0)) errs.amount = 'Amount exceeds available balance.'
-    if (!beneficiaryId) errs.beneficiary = 'Please select a beneficiary.'
+    if (!beneficiaryId) errs.beneficiary = transferType === 'own' ? 'Please select a destination account.' : 'Please select a beneficiary.'
     if (!purposeCode)   errs.purpose = 'Purpose code is required.'
     setErrors(errs)
     return Object.keys(errs).length === 0
@@ -170,7 +170,7 @@ export function PaymentNew() {
                   .filter(a => transferType === 'international' ? a.primary : true)
                   .map(a => (
                     <option key={a.id} value={a.id}>
-                      {getCurrencyFlag(a.currency)} {a.name} — Available: {formatCurrency(a.available, a.currency, true)}
+                      {getCurrencyFlag(a.currency)} {a.name} — Available: {formatCurrency(a.available, a.currency)}
                     </option>
                   ))}
               </select>
@@ -181,32 +181,53 @@ export function PaymentNew() {
               )}
             </div>
 
-            {/* Beneficiary */}
+            {/* Beneficiary / Destination Account */}
             <div>
               <label className="block text-sm font-medium text-foreground mb-1.5">
-                Beneficiary <span className="text-error-500">*</span>
+                {transferType === 'own' ? 'Destination Account' : 'Beneficiary'}{' '}
+                <span className="text-error-500">*</span>
               </label>
-              <select
-                value={beneficiaryId}
-                onChange={e => setBeneficiaryId(e.target.value)}
-                className={cn(
-                  'w-full px-3 py-2.5 text-sm border rounded-md bg-surface-50 focus:outline-none focus:ring-2 focus:ring-primary-500',
-                  errors.beneficiary ? 'border-error-400' : 'border-border',
-                )}
-              >
-                <option value="">— Select approved beneficiary —</option>
-                {approvedBens
-                  .filter(b => {
-                    if (transferType === 'international') return b.type === 'international'
-                    if (transferType === 'third_party')   return b.type === 'domestic'
-                    return true
-                  })
-                  .map(b => (
-                    <option key={b.id} value={b.id}>
-                      {b.name} — {b.currency} — {b.bankName}
-                    </option>
-                  ))}
-              </select>
+              {transferType === 'own' ? (
+                <select
+                  value={beneficiaryId}
+                  onChange={e => setBeneficiaryId(e.target.value)}
+                  className={cn(
+                    'w-full px-3 py-2.5 text-sm border rounded-md bg-surface-50 focus:outline-none focus:ring-2 focus:ring-primary-500',
+                    errors.beneficiary ? 'border-error-400' : 'border-border',
+                  )}
+                >
+                  <option value="">— Select destination account —</option>
+                  {accounts
+                    .filter(a => a.id !== sourceAccId)
+                    .map(a => (
+                      <option key={a.id} value={a.id}>
+                        {getCurrencyFlag(a.currency)} {a.name}
+                      </option>
+                    ))}
+                </select>
+              ) : (
+                <select
+                  value={beneficiaryId}
+                  onChange={e => setBeneficiaryId(e.target.value)}
+                  className={cn(
+                    'w-full px-3 py-2.5 text-sm border rounded-md bg-surface-50 focus:outline-none focus:ring-2 focus:ring-primary-500',
+                    errors.beneficiary ? 'border-error-400' : 'border-border',
+                  )}
+                >
+                  <option value="">— Select approved beneficiary —</option>
+                  {approvedBens
+                    .filter(b => {
+                      if (transferType === 'international') return b.type === 'international'
+                      if (transferType === 'third_party')   return b.type === 'domestic'
+                      return false
+                    })
+                    .map(b => (
+                      <option key={b.id} value={b.id}>
+                        {b.name} — {b.currency} — {b.bankName}
+                      </option>
+                    ))}
+                </select>
+              )}
               {errors.beneficiary && <p className="text-xs text-error-600 mt-1">{errors.beneficiary}</p>}
               {selectedBen && (
                 <div className="mt-2 p-2 bg-surface-100 rounded text-xs text-muted-foreground grid grid-cols-2 gap-1">
@@ -243,7 +264,7 @@ export function PaymentNew() {
               {errors.amount && <p className="text-xs text-error-600 mt-1">{errors.amount}</p>}
               {numAmount > 0 && sourceAccount && numAmount <= sourceAccount.available && (
                 <p className="text-xs text-success-600 mt-1 flex items-center gap-1">
-                  ✓ Within available balance ({formatINR(sourceAccount.available, true)} available)
+                  ✓ Within available balance ({formatINR(sourceAccount.available)} available)
                 </p>
               )}
             </div>

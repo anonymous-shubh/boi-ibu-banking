@@ -25,7 +25,7 @@ export function AuthLayout() {
           <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-accent-gold shadow-lg mb-4">
             <Building2 size={28} className="text-primary-900" />
           </div>
-          <h1 className="text-2xl font-bold text-white">BOI GIFT City IBU</h1>
+          <h1 className="text-2xl font-bold text-white">Arttha</h1>
           <p className="text-primary-300 text-sm mt-1">Internet Banking Platform</p>
         </motion.div>
 

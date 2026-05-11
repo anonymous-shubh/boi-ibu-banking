@@ -77,7 +77,7 @@ function ApprovalRow({
       </td>
       <td className="px-4 py-3 text-right">
         {approval.amount ? (
-          <span className="text-xs font-mono font-semibold text-foreground">{formatINR(approval.amount, true)}</span>
+          <span className="text-xs font-mono font-semibold text-foreground">{formatINR(approval.amount)}</span>
         ) : (
           <span className="text-xs text-muted-foreground">—</span>
         )}

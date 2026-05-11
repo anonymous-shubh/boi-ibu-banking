@@ -29,7 +29,7 @@ export function PaymentSuccess() {
     beneficiary:  'Acme Corporation USA',
     currency:     'USD',
     foreignAmount: 74915.60,
-    reference:    `TXN-BOIGC-${new Date().getFullYear()}${String(Date.now()).slice(-8)}`,
+    reference:    `TXN-ARTTHA-${new Date().getFullYear()}${String(Date.now()).slice(-8)}`,
     uetr:         'b4c8d2e6-f1a3-7890-abcd-ef5678901234',
     valueDate:    new Date(Date.now() + 2 * 86400000).toISOString().slice(0, 10),
   }

@@ -55,10 +55,10 @@ function HeroAccountCard({ onNavigate }: { onNavigate: () => void }) {
         <div className="mb-6">
           <p className="text-sm text-blue-300/70 mb-1">Available Balance</p>
           <p className="text-4xl font-bold text-white font-mono tracking-tight">
-            {formatINR(primary.available, true)}
+            {formatINR(primary.available)}
           </p>
           <p className="text-sm text-blue-300/60 mt-1">
-            Book balance: {formatINR(primary.balance, true)}
+            Book balance: {formatINR(primary.balance)}
           </p>
         </div>
 
@@ -110,10 +110,10 @@ function ForeignAccountCard({
         <ChevronRight size={14} className="text-muted-foreground group-hover:text-primary-600 transition-colors" />
       </div>
       <p className="text-lg font-bold font-mono text-foreground">
-        {formatCurrency(account.available, account.currency, true)}
+        {formatCurrency(account.available, account.currency)}
       </p>
       <p className="text-xs text-muted-foreground mt-0.5">
-        Book: {formatCurrency(account.balance, account.currency, true)}
+        Book: {formatCurrency(account.balance, account.currency)}
       </p>
     </motion.div>
   )
@@ -334,7 +334,7 @@ export function Dashboard() {
         <div>
           <h1 className="page-title">Dashboard</h1>
           <p className="page-subtitle text-muted-foreground mt-0.5">
-            BOI GIFT City IBU — Corporate Internet Banking
+            Arttha — Corporate Internet Banking
           </p>
         </div>
         <div className="flex items-center gap-2 text-xs text-muted-foreground bg-surface-100 rounded-md px-3 py-2">
@@ -347,7 +347,7 @@ export function Dashboard() {
       <div className="compliance-bar-info flex items-center gap-2">
         <AlertTriangle size={13} className="text-info-600 flex-shrink-0" />
         <span>
-          You are accessing BOI GIFT City IBU Internet Banking, a regulated service under IFSCA.
+          You are accessing Arttha Internet Banking, a regulated service under IFSCA.
           Transactions are subject to FEMA and IFSCA circular IFSCA/IBU/2024/012.
         </span>
       </div>
